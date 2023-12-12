@@ -35,3 +35,4 @@ C:\Users\david\Desktop\SemestralVB\SemestralVB\SemestralVB\obj\Debug\net6.0-wind
 C:\Users\david\Desktop\SemestralVB\SemestralVB\SemestralVB\obj\Debug\net6.0-windows\ref\SemestralVB.dll
 C:\Users\david\Desktop\SemestralVB\SemestralVB\SemestralVB\obj\Debug\net6.0-windows\SemestralVB.FormEstudiante.resources
 C:\Users\david\Desktop\SemestralVB\SemestralVB\SemestralVB\obj\Debug\net6.0-windows\SemestralVB.FormProfesor.resources
+C:\Users\david\Desktop\SemestralVB\SemestralVB\SemestralVB\obj\Debug\net6.0-windows\SemestralVB.FormFacultades.resources

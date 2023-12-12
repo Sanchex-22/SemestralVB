@@ -152,6 +152,23 @@ Public Class FormProfesor
         End Try
     End Sub
 
+    Private Sub btnLimpiarProfesor_Click(sender As Object, e As EventArgs) Handles btnLimpiarProfesor.Click
+        ' Limpiar los valores de los controles del formulario
+        txtIdProfesor.Clear()
+        txtCodigo.Clear()
+        txtCedulaProfesor.Clear()
+        txtNombreProfesor.Clear()
+        txtApellidoProfesor.Clear()
+        txtDireccionProfesor.Clear()
+        txtCelularProfesor.Clear()
+        txtCorreoProfesor.Clear()
+        txtCodProvincia.Clear()
+        txtCodDistrito.Clear()
+        txtSalarioBase.Clear()
+        cmbEstatusProfesor.Clear()
+
+    End Sub
+
     Private Sub ToolStripMenuItem1_Click(sender As Object, e As EventArgs)
 
     End Sub
@@ -170,4 +187,8 @@ Public Class FormProfesor
         FormEstudiante.Show()
     End Sub
 
+    Private Sub FacultadesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles FacultadesToolStripMenuItem.Click
+        Me.Hide()
+        FormFacultades.Show()
+    End Sub
 End Class

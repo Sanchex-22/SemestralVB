@@ -58,13 +58,15 @@ Partial Class FormProfesor
         txtIdProfesor = New TextBox()
         btnEditarProfesor = New Button()
         Label6 = New Label()
+        btnLimpiarProfesor = New Button()
+        FacultadesToolStripMenuItem = New ToolStripMenuItem()
         MenuStrip.SuspendLayout()
         CType(dgvProfesores, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
         ' MenuStrip
         ' 
-        MenuStrip.Items.AddRange(New ToolStripItem() {PresentacionToolStripMenuItem, Mantenimiento, SalirToolStripMenuItem})
+        MenuStrip.Items.AddRange(New ToolStripItem() {PresentacionToolStripMenuItem, Mantenimiento, SalirToolStripMenuItem, FacultadesToolStripMenuItem})
         MenuStrip.Location = New Point(0, 0)
         MenuStrip.Name = "MenuStrip"
         MenuStrip.Size = New Size(800, 24)
@@ -105,7 +107,7 @@ Partial Class FormProfesor
         ' Label1
         ' 
         Label1.AutoSize = True
-        Label1.Location = New Point(23, 42)
+        Label1.Location = New Point(23, 48)
         Label1.Name = "Label1"
         Label1.Size = New Size(62, 15)
         Label1.TabIndex = 3
@@ -133,7 +135,7 @@ Partial Class FormProfesor
         ' 
         btnAgregar.Location = New Point(294, 384)
         btnAgregar.Name = "btnAgregar"
-        btnAgregar.Size = New Size(75, 23)
+        btnAgregar.Size = New Size(100, 23)
         btnAgregar.TabIndex = 6
         btnAgregar.Text = "Agregar"
         btnAgregar.UseVisualStyleBackColor = True
@@ -271,9 +273,9 @@ Partial Class FormProfesor
         Provincia.AutoSize = True
         Provincia.Location = New Point(159, 366)
         Provincia.Name = "Provincia"
-        Provincia.Size = New Size(56, 15)
+        Provincia.Size = New Size(81, 15)
         Provincia.TabIndex = 23
-        Provincia.Text = "Provincia"
+        Provincia.Text = "Cod Provincia"
         ' 
         ' txtCodDistrito
         ' 
@@ -287,9 +289,9 @@ Partial Class FormProfesor
         Distrito.AutoSize = True
         Distrito.Location = New Point(294, 234)
         Distrito.Name = "Distrito"
-        Distrito.Size = New Size(44, 15)
+        Distrito.Size = New Size(69, 15)
         Distrito.TabIndex = 25
-        Distrito.Text = "distrito"
+        Distrito.Text = "Cod distrito"
         ' 
         ' txtSalarioBase
         ' 
@@ -349,11 +351,27 @@ Partial Class FormProfesor
         Label6.TabIndex = 32
         Label6.Text = "ingrese el id para editar o eliminar ->"
         ' 
+        ' btnLimpiarProfesor
+        ' 
+        btnLimpiarProfesor.Location = New Point(713, 42)
+        btnLimpiarProfesor.Name = "btnLimpiarProfesor"
+        btnLimpiarProfesor.Size = New Size(75, 23)
+        btnLimpiarProfesor.TabIndex = 33
+        btnLimpiarProfesor.Text = "Limpiar"
+        btnLimpiarProfesor.UseVisualStyleBackColor = True
+        ' 
+        ' FacultadesToolStripMenuItem
+        ' 
+        FacultadesToolStripMenuItem.Name = "FacultadesToolStripMenuItem"
+        FacultadesToolStripMenuItem.Size = New Size(73, 20)
+        FacultadesToolStripMenuItem.Text = "facultades"
+        ' 
         ' FormProfesor
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(800, 450)
+        Controls.Add(btnLimpiarProfesor)
         Controls.Add(Label6)
         Controls.Add(btnEditarProfesor)
         Controls.Add(txtIdProfesor)
@@ -430,4 +448,6 @@ Partial Class FormProfesor
     Friend WithEvents txtIdProfesor As TextBox
     Friend WithEvents btnEditarProfesor As Button
     Friend WithEvents Label6 As Label
+    Friend WithEvents btnLimpiarProfesor As Button
+    Friend WithEvents FacultadesToolStripMenuItem As ToolStripMenuItem
 End Class

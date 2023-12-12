@@ -8,17 +8,6 @@
               "Cedula: 8-979-2162"
 
     End Sub
-    Private Sub btnConectar_Click(sender As Object, e As EventArgs) Handles btnConectar.Click
-        ' Crea una instancia de tu clase BD
-        Dim bd As New BD()
-
-        ' Llama al método que realiza la conexión
-        bd.Conectar()
-
-        ' Muestra un mensaje de conexión exitosa
-        MessageBox.Show("Conexión exitosa desde el formulario principal")
-    End Sub
-
     Private Sub ToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles Mantenimiento.Click
 
     End Sub
@@ -44,5 +33,10 @@
 
     Private Sub Label2_Click(sender As Object, e As EventArgs) Handles Label2.Click
 
+    End Sub
+
+    Private Sub FacultadesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles FacultadesToolStripMenuItem.Click
+        Me.Hide()
+        FormFacultades.Show()
     End Sub
 End Class

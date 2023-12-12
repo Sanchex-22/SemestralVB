@@ -77,26 +77,23 @@ Public Class FormEstudiante
             ' Abrir la conexión
             connection.Open()
 
-            ' Crear y ejecutar la consulta SQL de inserción
-            Dim query As String = "INSERT INTO Estudiante (cedula, nombre, apellido, direccion, celular, correo, cod_facultad, cod_carrera, indice_academico, sexo, estatus) " &
-                                  "VALUES (@Cedula, @Nombre, @Apellido, @Direccion, @Celular, @Correo, @CodFacultad, @CodCarrera, @IndiceAcademico, @Sexo, @Estatus)"
+            ' Crear y configurar el comando para el procedimiento almacenado
+            Dim command As New MySqlCommand("InsertarEstudiante", connection)
+            command.CommandType = CommandType.StoredProcedure
 
-            Dim command As New MySqlCommand(query, connection)
+            ' Parámetros para el procedimiento almacenado obtenidos de los controles en el formulario
+            command.Parameters.AddWithValue("@p_cedula", txtCedula.Text)
+            command.Parameters.AddWithValue("@p_nombre", txtNombre.Text)
+            command.Parameters.AddWithValue("@p_apellido", txtApellido.Text)
+            command.Parameters.AddWithValue("@p_direccion", txtDireccion.Text)
+            command.Parameters.AddWithValue("@p_celular", txtCelular.Text)
+            command.Parameters.AddWithValue("@p_correo", txtCorreo.Text)
+            command.Parameters.AddWithValue("@p_cod_facultad", txtCodFacultad.Text)
+            command.Parameters.AddWithValue("@p_cod_carrera", txtCodCarrera.Text)
+            command.Parameters.AddWithValue("@p_sexo", cmbSexo.Text)
+            command.Parameters.AddWithValue("@p_estatus", cmbEstatus.Text)
 
-            ' Parámetros para la consulta de inserción obtenidos de los controles en el formulario
-            command.Parameters.AddWithValue("@Cedula", txtCedula.Text)
-            command.Parameters.AddWithValue("@Nombre", txtNombre.Text)
-            command.Parameters.AddWithValue("@Apellido", txtApellido.Text)
-            command.Parameters.AddWithValue("@Direccion", txtDireccion.Text)
-            command.Parameters.AddWithValue("@Celular", txtCelular.Text)
-            command.Parameters.AddWithValue("@Correo", txtCorreo.Text)
-            command.Parameters.AddWithValue("@CodFacultad", txtCodFacultad.Text)
-            command.Parameters.AddWithValue("@CodCarrera", txtCodCarrera.Text)
-            command.Parameters.AddWithValue("@IndiceAcademico", Convert.ToDecimal(txtIndiceAcademico.Text))
-            command.Parameters.AddWithValue("@Sexo", cmbSexo.Text)
-            command.Parameters.AddWithValue("@Estatus", cmbEstatus.Text)
-
-            ' Ejecutar la consulta
+            ' Ejecutar el procedimiento almacenado
             command.ExecuteNonQuery()
 
             MessageBox.Show("Datos insertados correctamente.")
@@ -106,6 +103,7 @@ Public Class FormEstudiante
             ' Cerrar la conexión
             connection.Close()
         End Try
+
     End Sub
 
     Private Sub ToolStripMenuItem_Click(sender As Object, e2 As EventArgs)
@@ -209,13 +207,33 @@ Public Class FormEstudiante
         End Try
     End Sub
 
+    Private Sub btnLimpiarEstudiante_Click(sender As Object, e As EventArgs) Handles btnLimpiarEstudiante.Click
+        txtIdEstudiante.Clear()
+        txtCedula.Clear()
+        txtNombre.Clear()
+        txtApellido.Clear()
+        txtDireccion.Clear()
+        txtCelular.Clear()
+        txtCorreo.Clear()
+        txtCodFacultad.Clear()
+        txtCodCarrera.Clear()
+        txtIndiceAcademico.Clear()
+        cmbSexo.Clear()
+        cmbEstatus.Clear()
+        dgvEstudiantes.DataSource = Nothing
+    End Sub
+
     Private Sub Mantenimiento_Click(sender As Object, e As EventArgs) Handles Mantenimiento.Click
 
     End Sub
 
-    Private Sub ModificarToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ModificarToolStripMenuItem.Click
+    Private Sub ModificarToolStripMenuItem_Click(sender As Object, e As EventArgs)
         Me.Hide()
         'FormEstudianteEdit.Show()
     End Sub
 
+    Private Sub FacultadToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles FacultadToolStripMenuItem.Click
+        Me.Hide()
+        FormFacultades.Show()
+    End Sub
 End Class

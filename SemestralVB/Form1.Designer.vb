@@ -22,30 +22,21 @@ Partial Class Form1
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        btnConectar = New Button()
         MenuStrip1 = New MenuStrip()
         PresentacionToolStripMenuItem = New ToolStripMenuItem()
         Mantenimiento = New ToolStripMenuItem()
         EstudianteToolStripMenuItem = New ToolStripMenuItem()
         ProfesorToolStripMenuItem = New ToolStripMenuItem()
         SalirToolStripMenuItem = New ToolStripMenuItem()
+        FacultadesToolStripMenuItem = New ToolStripMenuItem()
         Label1 = New Label()
         Label2 = New Label()
         MenuStrip1.SuspendLayout()
         SuspendLayout()
         ' 
-        ' btnConectar
-        ' 
-        btnConectar.Location = New Point(660, 40)
-        btnConectar.Name = "btnConectar"
-        btnConectar.Size = New Size(101, 23)
-        btnConectar.TabIndex = 0
-        btnConectar.Text = "Conectar BD"
-        btnConectar.UseVisualStyleBackColor = True
-        ' 
         ' MenuStrip1
         ' 
-        MenuStrip1.Items.AddRange(New ToolStripItem() {PresentacionToolStripMenuItem, Mantenimiento, SalirToolStripMenuItem})
+        MenuStrip1.Items.AddRange(New ToolStripItem() {PresentacionToolStripMenuItem, Mantenimiento, SalirToolStripMenuItem, FacultadesToolStripMenuItem})
         MenuStrip1.Location = New Point(0, 0)
         MenuStrip1.Name = "MenuStrip1"
         MenuStrip1.Size = New Size(800, 24)
@@ -83,6 +74,12 @@ Partial Class Form1
         SalirToolStripMenuItem.Size = New Size(41, 20)
         SalirToolStripMenuItem.Text = "Salir"
         ' 
+        ' FacultadesToolStripMenuItem
+        ' 
+        FacultadesToolStripMenuItem.Name = "FacultadesToolStripMenuItem"
+        FacultadesToolStripMenuItem.Size = New Size(73, 20)
+        FacultadesToolStripMenuItem.Text = "facultades"
+        ' 
         ' Label1
         ' 
         Label1.AutoSize = True
@@ -107,7 +104,6 @@ Partial Class Form1
         ClientSize = New Size(800, 450)
         Controls.Add(Label2)
         Controls.Add(Label1)
-        Controls.Add(btnConectar)
         Controls.Add(MenuStrip1)
         MainMenuStrip = MenuStrip1
         Name = "Form1"
@@ -117,8 +113,6 @@ Partial Class Form1
         ResumeLayout(False)
         PerformLayout()
     End Sub
-
-    Friend WithEvents btnConectar As Button
     Friend WithEvents MenuStrip1 As MenuStrip
     Friend WithEvents Mantenimiento As ToolStripMenuItem
     Friend WithEvents EstudianteToolStripMenuItem As ToolStripMenuItem
@@ -127,4 +121,5 @@ Partial Class Form1
     Friend WithEvents PresentacionToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
+    Friend WithEvents FacultadesToolStripMenuItem As ToolStripMenuItem
 End Class

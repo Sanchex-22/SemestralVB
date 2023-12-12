@@ -26,8 +26,8 @@ Partial Class FormEstudiante
         PresentacionToolStripMenuItem = New ToolStripMenuItem()
         Mantenimiento = New ToolStripMenuItem()
         EstudianteToolStripMenuItem = New ToolStripMenuItem()
-        ModificarToolStripMenuItem = New ToolStripMenuItem()
         ProfesorToolStripMenuItem = New ToolStripMenuItem()
+        FacultadToolStripMenuItem = New ToolStripMenuItem()
         SalirToolStripMenuItem = New ToolStripMenuItem()
         Label1 = New Label()
         btnBuscar = New Button()
@@ -61,13 +61,14 @@ Partial Class FormEstudiante
         txtCedulaEstudiante = New TextBox()
         btnBuscarEstudiante = New Button()
         Label7 = New Label()
+        btnLimpiarEstudiante = New Button()
         MenuStrip.SuspendLayout()
         CType(dgvEstudiantes, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
         ' MenuStrip
         ' 
-        MenuStrip.Items.AddRange(New ToolStripItem() {PresentacionToolStripMenuItem, Mantenimiento, SalirToolStripMenuItem})
+        MenuStrip.Items.AddRange(New ToolStripItem() {PresentacionToolStripMenuItem, Mantenimiento, FacultadToolStripMenuItem, SalirToolStripMenuItem})
         MenuStrip.Location = New Point(0, 0)
         MenuStrip.Name = "MenuStrip"
         MenuStrip.Size = New Size(800, 24)
@@ -89,22 +90,21 @@ Partial Class FormEstudiante
         ' 
         ' EstudianteToolStripMenuItem
         ' 
-        EstudianteToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {ModificarToolStripMenuItem})
         EstudianteToolStripMenuItem.Name = "EstudianteToolStripMenuItem"
         EstudianteToolStripMenuItem.Size = New Size(129, 22)
         EstudianteToolStripMenuItem.Text = "Estudiante"
-        ' 
-        ' ModificarToolStripMenuItem
-        ' 
-        ModificarToolStripMenuItem.Name = "ModificarToolStripMenuItem"
-        ModificarToolStripMenuItem.Size = New Size(125, 22)
-        ModificarToolStripMenuItem.Text = "modificar"
         ' 
         ' ProfesorToolStripMenuItem
         ' 
         ProfesorToolStripMenuItem.Name = "ProfesorToolStripMenuItem"
         ProfesorToolStripMenuItem.Size = New Size(129, 22)
         ProfesorToolStripMenuItem.Text = "Profesor"
+        ' 
+        ' FacultadToolStripMenuItem
+        ' 
+        FacultadToolStripMenuItem.Name = "FacultadToolStripMenuItem"
+        FacultadToolStripMenuItem.Size = New Size(73, 20)
+        FacultadToolStripMenuItem.Text = "facultades"
         ' 
         ' SalirToolStripMenuItem
         ' 
@@ -374,11 +374,21 @@ Partial Class FormEstudiante
         Label7.TabIndex = 35
         Label7.Text = "Ingrese el id para modificar o eliminar ->"
         ' 
+        ' btnLimpiarEstudiante
+        ' 
+        btnLimpiarEstudiante.Location = New Point(561, 47)
+        btnLimpiarEstudiante.Name = "btnLimpiarEstudiante"
+        btnLimpiarEstudiante.Size = New Size(75, 23)
+        btnLimpiarEstudiante.TabIndex = 36
+        btnLimpiarEstudiante.Text = "Limpiar"
+        btnLimpiarEstudiante.UseVisualStyleBackColor = True
+        ' 
         ' FormEstudiante
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(800, 450)
+        Controls.Add(btnLimpiarEstudiante)
         Controls.Add(Label7)
         Controls.Add(btnBuscarEstudiante)
         Controls.Add(txtCedulaEstudiante)
@@ -460,4 +470,6 @@ Partial Class FormEstudiante
     Friend WithEvents btnBuscarEstudiante As Button
     Friend WithEvents ModificarToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents Label7 As Label
+    Friend WithEvents btnLimpiarEstudiante As Button
+    Friend WithEvents FacultadToolStripMenuItem As ToolStripMenuItem
 End Class
